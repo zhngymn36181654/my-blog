@@ -1,27 +1,13 @@
-import { getSortedPostsData } from '../lib/posts'
+import Link from 'next/link'
 
-export async function getStaticProps() {
-    const allPostsData = getSortedPostsData()
-    return {
-        props: {
-            allPostsData
-        }
-    }
-}
-
-export default function Home({ allPostsData }) {
+export default function Home() {
     return (
-        <div>
-            <h1>我的博客</h1>
-            <ul>
-                {allPostsData.map(({ id, date, title }) => (
-                    <li key={id}>
-                        <a href={`/posts/${id}`}>{title}</a>
-                        <br />
-                        <small>{date}</small>
-                    </li>
-                ))}
-            </ul>
+        <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif' }}>
+            <h1>👋 欢迎来到我的博客</h1>
+            <p>这是一个用 Next.js 构建的静态博客网站。</p>
+            <p>
+                👉 <Link href="/posts">查看所有文章</Link>
+            </p>
         </div>
     )
 }
