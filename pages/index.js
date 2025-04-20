@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import "../styles/main.css"
 
 export default function Home() {
     return (
-        <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif' }}>
+        <div className='container'>
             <h1>👋 欢迎来到我的博客</h1>
             <p>这是一个用 Next.js 构建的静态博客网站。</p>
             <p>
